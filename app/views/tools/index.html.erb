@@ -1,5 +1,4 @@
 <h1> All Tools </h1>
-  <!--  view helper-->
   <table>
   <tr>
   <td> Tool </td>
@@ -7,6 +6,7 @@
 </tr>
 <% @tools.each do |tool|  %>
 <tr>
+  <!--  view helper-->
 <td><%= link_to "#{tool.name}", tool_path(tool.id) %></td>
 <td><%= tool.quantity %></td>
 </tr>
