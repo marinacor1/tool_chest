@@ -1,2 +1,10 @@
-<h1> Create a New Tool <h1>
-<%= render partial: "form", locals: {tool: @tool, button_text: "Create a New Tool Fool"} %>
+<%= form_for @tool do |f| %>
+  <%= f.label :name  %>
+  <%= f.text_field :name %>
+  <%= f.label :price  %>
+  <%= f.text_field :price %>
+  <%= f.label :quantity  %>
+  <%= f.text_field :quantity %>
+  
+  <%= f.submit %>
+<% end %>
