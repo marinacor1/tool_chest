@@ -8,6 +8,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'bcrypt'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 
@@ -17,6 +18,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'pry-rails'
   gem 'capybara'
+  gem 'launchy'
 end
 
 group :development do

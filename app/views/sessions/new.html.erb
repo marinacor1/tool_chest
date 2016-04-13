@@ -1,0 +1,7 @@
+<%= form_for (:sessions, url: login_path)  do |f|%>
+<%= f.text_field :username, placeholder: "Username" %>
+<%= f.text_field :email, placeholder: "Email" %>
+<%= f.text_field :password_digest, placeholder: "Password" %>
+<%= f.text_field :password_confirmation %>
+<%= f.submit "Create Account" %>
+<%end %>

@@ -5,14 +5,18 @@ class ToolsController < ApplicationController
   end
 
   def new
+    @user = User.find(params[:user_id])
     @tool = Tool.new
   end
 
   def create
-    tool = Tool.new (tool_params)
-    if tool.save
-      redirect_to tool_path(tool.id)
+    @user = User.find(params[:user_id])
+    @tool = Tool.new(tool_params)
+    if @tool.save
+      flash[:notice] = "You've successfully created a tool!"
+      redirect_to user_tool_path(@user, @tool)
     else
+      flash[:error] = "#{@tool.errors.full_messages.join(",")}"
       render :new
     end
   end
