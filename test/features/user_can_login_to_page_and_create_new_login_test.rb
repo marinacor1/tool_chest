@@ -9,7 +9,7 @@ class UserCanLoginToPageAndCreateNewLoginTest < ActionDispatch::IntegrationTest
     fill_in "Password confirmation", with: "password"
     click_button "Create Account"
 
-    assert_equal tools_path, current_path
+    assert_equal users_path, current_path
   end
 
   test "user will not create login with no name" do
@@ -24,5 +24,5 @@ class UserCanLoginToPageAndCreateNewLoginTest < ActionDispatch::IntegrationTest
 
     assert_equal new_user_path, current_path
     assert page.has_content?("Incorrect Login")
-end
+  end
 end
