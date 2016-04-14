@@ -3,7 +3,7 @@ require "test_helper"
 class UserCreatesToolTest < ActionDispatch::IntegrationTest
   test "user can create a tool" do
 
-    user =  User.create(username: "m", email: "m", password: "m")
+    user =  User.create(username: "m", email: "m", password: "m", password_confirmation: "m")
     visit new_user_tool_path(user)
 
     fill_in "Name", with: "Screwdriver"

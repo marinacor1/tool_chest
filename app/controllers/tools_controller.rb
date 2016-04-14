@@ -1,7 +1,8 @@
 class ToolsController < ApplicationController
 
   def index #create file called app/views/tools/index.html.erb
-    @tools = Tool.all
+    @user = User.find(params[:user_id])
+    @tools = @user.tools.new 
   end
 
   def new
@@ -11,7 +12,7 @@ class ToolsController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @tool = Tool.new(tool_params)
+    @tool = @user.tools.new(tool_params)
     if @tool.save
       flash[:notice] = "You've successfully created a tool!"
       redirect_to user_tool_path(@user, @tool)
