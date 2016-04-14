@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
+    flash[:errors] = "Incorrect Login"
   end
+
   def new
     @user = User.new
   end
@@ -11,7 +13,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to @user
     else
-      render :new #hits this
+      render :new
     end
   end
 
